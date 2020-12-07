@@ -1,9 +1,9 @@
 {
 	"manifest_version": 2,
 	
-	"name": "EuXFEL eLog CSS",
+	"name": "EuXFEL eLog Styler",
 	"version": "0.1.0",
-	"description": "Edit CSS of EuXFEL eLog",
+	"description": "Edit styling of EuXFEL eLog",
 	
 	"content_scripts": [{
 		"css": ["styles.css"],
