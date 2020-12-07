@@ -1,3 +1,107 @@
 td.messagelist {
   background-color: #FFFAFA !important;
 }
+
+td.title1 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Styling for navigation section */
+
+.tabrow {
+  overflow: hidden;
+  display: block;
+  float: left;
+  border-right: 1px solid white;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.tabbtn {
+  color: white;
+  font-size: 16px;
+  border: none;
+  background-color: #559dbb !important;
+  font-weight: bold;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+
+.tabbtn:hover {
+  color: #f39200 !important;
+}
+
+td.tabs {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  background-color: #999999;
+  padding-bottom: 0px; /* To override elog.css */
+  z-index: 1;
+}
+
+td.tabs span {
+  display: block;
+  float: none;
+  padding: 2px 10px;
+  text-align: left;
+  border: none;
+  background-color: #559dbb;
+}
+
+.dropdown:hover td.tabs {
+  display: block;
+}
+
+td.tabs a, td.tabs a:visited {
+  color: white !important;
+  background-color: #559dbb !important;
+}
+
+span.sltab a, span.sltab a:visited {
+  border-bottom: none;
+  color: #0d1456 !important;
+  font-size: 10pt;
+  line-height: 150%;
+}
+
+td.tabs a:hover {
+  border-bottom: none !important;
+  color: #f39200 !important;
+}
+
+.seltr {
+  display: block;
+  float: left;
+  border-right: 1px solid white;
+}
+
+.tabbtn a {
+  color: white;
+}
+
+.tabbtn a:hover {
+  color: #f39200;
+}
+
+/* Styling for selection page */
+
+table.selframe {
+  width: 80%;
+}
+
+span.selcomment {
+  display: none;
+}
+
+td.sellogbook {
+  padding: 1px;
+}
+
+td.selgroup {
+  padding: 5px;
+}
