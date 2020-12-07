@@ -21,7 +21,7 @@ $(function() {
                 if (i > 10 || $row.find("td").hasClass("list1") || $row.find("td").hasClass("list2"))
                     break;
                 $row.find("td").slideToggle();
-				i += 1 ;
+                i += 1 ;
             }
         }
     });
@@ -41,5 +41,19 @@ $(function() {
                 $(this)[0].style.setProperty('background-color', myscale(index/categories.length), 'important');
             });
         }
-    }) ;
+    });
+
+    // Styling of navigation section
+    $("td.tabs").parent().addClass('tabrow');
+    selelem = $("tr.tabrow:eq(0)").find("span.ltab a");
+    $("table.frame").children("tbody").prepend('<tr class="tabbtn seltr"></tr>');
+    $(".seltr").append(selelem);
+    $("tr.tabrow:eq(0)").find("td:first").before('<div class="dropdown"><button class="tabbtn">Commissioning</button></div>');
+    $("tr.tabrow:eq(1)").find("td:first").before('<div class="dropdown"><button class="tabbtn">Group Experiments</button></div>');
+
+    $("tr.tabrow").each(function() {
+        tdelem = $(this).find(".tabs");
+        btnelem = $(this).find(".dropdown");
+        btnelem.append(tdelem);
+    });
 });
