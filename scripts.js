@@ -4,8 +4,12 @@ const mode = params.get('mode');
 $(function() {
     $("td.messagelist").hide();
     $("td.attachment").hide();
-    $("td.attachmentframe").hide();
-    $("td.messageframe").hide();
+    page_fname = window.location.pathname.split('/').slice(-1)[0]
+    is_post = !isNaN(page_fname) && (page_fname != '');
+    if (!is_post) {
+        $("td.attachmentframe").hide();
+        $("td.messageframe").hide();
+    }
 
     $("table.listframe").click(function(event) {
         event.stopPropagation();
@@ -32,13 +36,23 @@ $(function() {
     });
     //myscale = chroma.bezier(['#779ecb', '#fde0e0']).scale().gamma(2);
     myscale = chroma.scale('Pastel2');
+    //myscale = chroma.scale('Paired');
 
     $("table.listframe").find("tr").each(function() {
         if ($(this).find('td.list1').length > 1 || $(this).find('td.list2').length > 1) {
             index = categories.indexOf($(this).find("td:eq(3)").text());
+            bgcolor = myscale(index/categories.length);
+            console.log(bgcolor.luminance());
+            if (bgcolor.luminance() < 0.5)
+                fgcolor = 'white';
+            else
+                fgcolor = 'black';
             $(this).find('td').each(function() {
                 $(this)[0].style.removeProperty('background-color');
-                $(this)[0].style.setProperty('background-color', myscale(index/categories.length), 'important');
+                $(this)[0].style.setProperty('background-color', bgcolor, 'important');
+            });
+            $(this).find('a').each(function() {
+                $(this)[0].style.setProperty('color', fgcolor, 'important');
             });
         }
     });
