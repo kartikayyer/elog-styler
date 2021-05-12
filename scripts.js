@@ -64,6 +64,8 @@ $(function() {
     $(".seltr").append(selelem);
     $("tr.tabrow:eq(0)").find("td:first").before('<div class="dropdown"><button class="tabbtn">Commissioning</button></div>');
     $("tr.tabrow:eq(1)").find("td:first").before('<div class="dropdown"><button class="tabbtn">Group Experiments</button></div>');
+    $("tr.tabrow:eq(2)").find("td:first").before('<div class="dropdown"><button class="tabbtn">This year</button></div>');
+    //$("tr.tabrow:eq(3)").find("td:first").before('<div class="dropdown"><button class="tabbtn">Same-year experiments</button></div>');
 
     $("tr.tabrow").each(function() {
         tdelem = $(this).find(".tabs");
